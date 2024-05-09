@@ -20,5 +20,20 @@ This is a React application built with Ant Design that retrieves paginated data 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-repo-url.git
-cd react-ant-design-paginated-table-app
+git clone https://github.com/tushar8342/Zime-ai
+
+2. Move to the Dir:
+
+```bash
+cd Zime-ai
+
+3. Install Packages:
+
+```bash
+npm install
+
+4. Start Projext:
+
+```bash
+npm Start
+
