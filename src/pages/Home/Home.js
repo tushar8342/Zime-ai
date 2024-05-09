@@ -46,32 +46,45 @@ const Home = () => {
     dispatch(setTags([]));
   };
   useEffect(() => {
-    const fetchAllPosts = async () => {
-      const response = await fetchData();
-      dispatch(setData(response.posts));
-      dispatch(setFilteredData(response.posts));
-      const tags = new Set();
-      response.posts?.forEach((post) =>
-        post.tags.forEach((tag) => tags.add(tag))
-      );
-      dispatch(
-        setAllTags(Array.from(tags).map((tag) => ({ value: tag, label: tag })))
-      );
-
-      if (searchText !== "") {
-        const newData = response.posts.filter((post) =>
-          post.body.toLowerCase().includes(searchText.toLowerCase().trim())
+    const fetchAllPostsIfNeeded = async () => {
+      // Check if data is already fetched
+      if (!data.length) {
+        const response = await fetchData();
+        dispatch(setData(response.posts));
+        dispatch(setFilteredData(response.posts));
+        const tags = new Set();
+        response.posts?.forEach((post) =>
+          post.tags.forEach((tag) => tags.add(tag))
         );
+        dispatch(
+          setAllTags(Array.from(tags).map((tag) => ({ value: tag, label: tag })))
+        );
+      }
+  
+      // Check if searchText or selectedTags have changed
+      if (searchText !== "" || selectedTags.length > 0) {
+        let newData = [...data]; // Start with original data
+        if (searchText !== "") {
+          newData = newData.filter((post) =>
+            post.body.toLowerCase().includes(searchText.toLowerCase().trim())
+          );
+        }
+        if (selectedTags.length > 0) {
+          newData = newData.filter((post) =>
+            selectedTags.every((tag) =>
+              post.tags.some((postTag) =>
+                postTag.toLowerCase().includes(tag.toLowerCase())
+              )
+            )
+          );
+        }
         dispatch(setFilteredData(newData));
       }
-      if (selectedTags.length > 0) {
-        handleChange(selectedTags);
-      }
     };
-
-    fetchAllPosts();
-  }, []);
-
+  
+    fetchAllPostsIfNeeded();
+  }, [dispatch, data, searchText, selectedTags]);
+  
   const handleTagClick = (value) => {
     const allSelected = [...selectedTags, value];
     const newFilteredData = data.filter((post) =>
