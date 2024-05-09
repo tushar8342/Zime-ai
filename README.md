@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# React Ant Design Paginated Table App
+Deploye Link (https://main--tushar-zime.netlify.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application built with Ant Design that retrieves paginated data from a dummy JSON endpoint and populates a table with the fetched data. The application also includes features such as multi-select filtering based on tags and a search input field for filtering posts based on text matches in the body property. The state of pagination, filtering, and search is persisted in the URL to ensure a seamless user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **Data Retrieval**: Fetches paginated data from the dummy JSON endpoint.
+2. **Table Population**: Displays fetched data in a paginated table using Ant Design components.
+3. **Multi-Select Filter**: Allows users to filter posts based on tags by selecting multiple tags simultaneously.
+4. **Search Input Field**: Enables users to filter posts based on text matches in the body property. The table dynamically updates as users type in the search input.
+5. **URL Persistence**: Persists the state of pagination, filtering, and search in the URL for a consistent user experience across sessions.
+6. **Routing**: Utilizes React Router for navigation within the application.
+7. **User Experience**: Designed with a user-friendly interface, clear navigation, and intuitive interactions.
+8. **Responsive Design**: Layout adapts gracefully to different screen sizes and devices.
+9. **Error Handling**: Implements error handling for scenarios such as failed data retrieval or invalid routes.
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/your-repo-url.git
+cd react-ant-design-paginated-table-app
